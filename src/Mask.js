@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './layer.css'
-console.log('logsdf')
+
 class Mask extends Component {
     componentDidMount() {
         const close = this.props.autoClose

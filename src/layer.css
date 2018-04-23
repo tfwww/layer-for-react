@@ -1,0 +1,25 @@
+.notic-layer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+.notic-layer .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.notic-layer span {
+    display: inline-block;
+    padding: 0.2rem 0.3rem;
+    margin: 0 .3rem;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    border-radius: 0.1rem;
+    -webkit-border-radius: 0.1rem;
+}

@@ -3,7 +3,6 @@ import './layer.css'
 
 class Mask extends Component {
     componentDidMount() {
-        console.log('sdf')
         const close = this.props.autoClose
         this.close(close)
     }
@@ -13,20 +12,16 @@ class Mask extends Component {
         if (config) {
             setTimeout(() => {
                 layer.style.display = 'none'
-            }, 1000);
+            }, 3000);
         }
     }
     render() {
-        const text = 'tesdfsdfst'
-        const style = {
-            display: '',
-            animationDuration: '100ms'
-        }
+        const text = 'test'
 
         return (
-            <div className="notic-layer" style={style}>
+            <div className="notic-layer">
                 <div className="table-cell">
-                    <span>{text}</span>
+                    <span>{this.props.text}</span>
                 </div>
             </div>
         )

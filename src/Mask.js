@@ -3,6 +3,7 @@ import './layer.css'
 
 class Mask extends Component {
     componentDidMount() {
+        console.log('sdf')
         const close = this.props.autoClose
         this.close(close)
     }
@@ -16,7 +17,7 @@ class Mask extends Component {
         }
     }
     render() {
-        const text = 'test'
+        const text = 'tesdfsdfst'
         const style = {
             display: '',
             animationDuration: '100ms'

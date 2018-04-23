@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Mask from '../../src/Mask'
+import Layer from '../../src/Layer'
 ReactDOM.render((
-        <Mask autoClose={true} text={'外面'} />
+        <Layer time={5000} text={'外面'} />
     ),
     document.getElementById('app')
 )

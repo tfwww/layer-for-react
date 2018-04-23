@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import './layer.css'
 
-class Mask extends Component {
+class Layer extends Component {
     componentDidMount() {
-        const close = this.props.autoClose
-        this.close(close)
+        const time = this.props.time
+        this.close(time)
     }
 
-    close(config) {
+    close(time) {
         const layer = document.querySelector('.notic-layer')
-        if (config) {
+        if (time) {
             setTimeout(() => {
                 layer.style.display = 'none'
-            }, 3000);
+            }, time);
         }
     }
     render() {
@@ -28,4 +28,4 @@ class Mask extends Component {
     }
 }
 
-export default Mask;
+export default Layer;

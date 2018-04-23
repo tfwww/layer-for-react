@@ -40,7 +40,7 @@ const Tips = (props) => {
 class Layer extends Component {
     componentDidMount() {
         const time = this.props.time
-        // this.close(time)
+        this.close(time)
         this.type()
     }
 
@@ -60,8 +60,10 @@ class Layer extends Component {
     }
     render() {
         return (
-            this.props.type === 0 && <Tips {...this.props} />
-            // <Dialog />
+            <div>
+                {this.props.type === 0 && <Tips {...this.props} />}
+                {this.props.type === 1 && <Dialog />}
+            </div>
         )
     }
 }

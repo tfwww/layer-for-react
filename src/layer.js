@@ -60,17 +60,22 @@ class Layer extends Component {
     }
     renderBtnGroup() {
         const btns = this.props.btns
-        return btns.map((btn, inx) => {
+        const list = btns.map((btn, inx) => {
             return (
-                <span key={inx} no="" type="0" onClick={() => this.btnAction(btn.action) }>{btn.title}</span>
+                <span key={inx} no="" type="0" onClick={() => this.btnAction(btn.action)}>{btn.title}</span>
             )
         })
+        return (
+            <div className="layui-m-layerbtn">
+                {list}
+            </div>
+        )
     }
 
     renderDailog() {
         const style = {
-            // backgroundColor: '#8DCE16',
-            // color: '#fff',
+            backgroundColor: '#8DCE16',
+            color: '#fff',
         }
         return (
             <div className="layui-m-layer layui-m-layer0" id="wm-layer">
@@ -78,11 +83,13 @@ class Layer extends Component {
                 <div className="layui-m-layermain">
                     <div className="layui-m-layersection">
                         <div className="layui-m-layerchild layui-m-anim-up">
-                            {this.props.title && <h3>{this.props.title}</h3>}
+                            {
+                                this.props.title && <h3 style={style}>{this.props.title}</h3>
+                            }
                             <div className="layui-m-layercont">{this.props.content}</div>
-                            <div className="layui-m-layerbtn">
-                                {this.renderBtnGroup()}
-                            </div>
+                            {
+                                this.props.btns && this.renderBtnGroup()
+                            }
                         </div>
                     </div>
                 </div>

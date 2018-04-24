@@ -16,7 +16,7 @@ const close = () => {
 
 const btns = [
     {
-        title: '1',
+        title: '确定',
         action: test
     // }, {
     //     title: '2',
@@ -29,7 +29,7 @@ const btns = [
 
 ReactDOM.render((
         <Layer type={1}
-            // title={'sdf'}
+            title={'我是标题'}
             content={'我是内容'}
             time={5000}
             text={'abc'}

@@ -25,7 +25,7 @@ const btns = [
 ]
 
 ReactDOM.render((
-        <Layer type={1}
+        <Layer type={2}
             title={'我是标题'}
             content={'我是内容'}
             time={5000}

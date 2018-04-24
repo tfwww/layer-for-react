@@ -18,6 +18,7 @@ class Layer extends Component {
         super(props)
         this.cancel = this.cancel.bind(this)
         this.confirm = this.confirm.bind(this)
+        this.clickShade = this.clickShade.bind(this)
     }
     componentDidMount() {
         const time = this.props.time
@@ -60,6 +61,11 @@ class Layer extends Component {
         this.close()
     }
 
+    // 点击遮罩层，关闭弹框
+    clickShade() {
+        this.close()
+    }
+
     renderDailog() {
         const style = {
             backgroundColor: '#8DCE16',
@@ -67,7 +73,7 @@ class Layer extends Component {
         }
         return (
             <div className="layui-m-layer layui-m-layer0" id="wm-layer">
-                <div className="layui-m-layershade"></div>
+                <div className="layui-m-layershade" onClick={this.clickShade}></div>
                 <div className="layui-m-layermain">
                     <div className="layui-m-layersection">
                         <div className="layui-m-layerchild layui-m-anim-up">

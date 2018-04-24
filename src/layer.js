@@ -58,7 +58,6 @@ class Layer extends Component {
     clickShade() {
         this.close()
     }
-
     renderBtnGroup() {
         const btns = this.props.btns
         return btns.map((btn, inx) => {
@@ -70,8 +69,8 @@ class Layer extends Component {
 
     renderDailog() {
         const style = {
-            backgroundColor: '#8DCE16',
-            color: '#fff',
+            // backgroundColor: '#8DCE16',
+            // color: '#fff',
         }
         return (
             <div className="layui-m-layer layui-m-layer0" id="wm-layer">
@@ -79,7 +78,7 @@ class Layer extends Component {
                 <div className="layui-m-layermain">
                     <div className="layui-m-layersection">
                         <div className="layui-m-layerchild layui-m-anim-up">
-                            <h3 style={style}>{this.props.title}</h3>
+                            {this.props.title && <h3>{this.props.title}</h3>}
                             <div className="layui-m-layercont">{this.props.content}</div>
                             <div className="layui-m-layerbtn">
                                 {this.renderBtnGroup()}

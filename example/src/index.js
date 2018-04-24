@@ -18,18 +18,18 @@ const btns = [
     {
         title: '1',
         action: test
-    }, {
-        title: '2',
-        action: confirm
-    }, {
-        title: '3',
-        action: close
+    // }, {
+    //     title: '2',
+    //     action: confirm
+    // }, {
+    //     title: '3',
+    //     action: close
     }
 ]
 
 ReactDOM.render((
         <Layer type={1}
-            title={'标题'}
+            // title={'sdf'}
             content={'我是内容'}
             time={5000}
             text={'abc'}

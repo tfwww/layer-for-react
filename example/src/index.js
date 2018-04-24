@@ -17,13 +17,10 @@ const close = () => {
 const btns = [
     {
         title: '确定',
-        action: test
-    // }, {
-    //     title: '2',
-    //     action: confirm
-    // }, {
-    //     title: '3',
-    //     action: close
+        action: confirm
+    }, {
+        title: '取消',
+        action: close
     }
 ]
 

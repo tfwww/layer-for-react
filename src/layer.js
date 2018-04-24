@@ -13,6 +13,22 @@ const Tips = (props) => {
     )
 }
 
+const Loading = () => {
+    return (
+        <div className="layui-m-layer layui-m-layer2">
+            <div className="layui-m-layershade"></div>
+            <div className="layui-m-layermain">
+                <div className="layui-m-layersection">
+                    <div className="layui-m-layerchild  layui-m-anim-scale">
+                        <div className="layui-m-layercont"><i></i><i className="layui-m-layerload"></i><i></i>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
 class Layer extends Component {
     constructor(props) {
         super(props)
@@ -92,6 +108,7 @@ class Layer extends Component {
             <div>
                 {this.props.type === 0 && <Tips {...this.props} />}
                 {this.props.type === 1 && this.renderDailog()}
+                {this.props.type === 2 && <Loading />}
             </div>
         )
     }

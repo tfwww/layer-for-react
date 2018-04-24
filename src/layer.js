@@ -25,15 +25,6 @@ class Layer extends Component {
         if (type === 0) {
             this.delayClose(time)
         }
-
-        this.type()
-    }
-
-    type() {
-        const type = this.props.type
-        if (type === 0) {
-
-        }
     }
 
     delayClose(time) {

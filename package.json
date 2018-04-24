@@ -1,6 +1,6 @@
 {
-  "name": "react-layer",
-  "version": "1.0.0",
+  "name": "layer-for-react",
+  "version": "0.0.1",
   "description": "A React Layer system.",
   "main": "index.js",
   "scripts": {

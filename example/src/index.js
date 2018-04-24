@@ -16,6 +16,8 @@ const close = () => {
 
 ReactDOM.render((
         <Layer type={1}
+            title={'标题'}
+            content={'我是内容'}
             time={5000}
             text={'abc'}
             onCancel={() => test()}

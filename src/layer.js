@@ -17,6 +17,7 @@ class Layer extends Component {
     constructor(props) {
         super(props)
         this.cancel = this.cancel.bind(this)
+        this.confirm = this.confirm.bind(this)
     }
     componentDidMount() {
         const time = this.props.time
@@ -44,9 +45,19 @@ class Layer extends Component {
         }
     }
 
+    close() {
+        const layer = document.getElementById('wm-layer')
+        layer.style.display = 'none'
+    }
+
     cancel() {
         this.props.onCancel()
+        this.close()
+    }
 
+    confirm() {
+        this.props.onConfirm()
+        this.close()
     }
 
     renderDailog() {
@@ -55,16 +66,16 @@ class Layer extends Component {
             color: '#fff',
         }
         return (
-            <div className="layui-m-layer layui-m-layer0">
+            <div className="layui-m-layer layui-m-layer0" id="wm-layer">
                 <div className="layui-m-layershade"></div>
                 <div className="layui-m-layermain">
                     <div className="layui-m-layersection">
                         <div className="layui-m-layerchild layui-m-anim-up">
-                            <h3 style={style}>我是标题</h3>
-                            <div className="layui-m-layercont">展现的是全部结构</div>
+                            <h3 style={style}>{this.props.title}</h3>
+                            <div className="layui-m-layercont">{this.props.content}</div>
                             <div className="layui-m-layerbtn">
                                 <span no="" type="0" onClick={this.cancel}>取消</span>
-                                <span yes="" type="1" onClick={() => this.props.onConfirm()}>确认</span>
+                                <span yes="" type="1" onClick={this.confirm}>确认</span>
                             </div>
                         </div>
                     </div>

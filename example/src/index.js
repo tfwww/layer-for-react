@@ -14,16 +14,26 @@ const close = () => {
     console.log('on close')
 }
 
+const btns = [
+    {
+        title: '1',
+        action: test
+    }, {
+        title: '2',
+        action: confirm
+    }, {
+        title: '3',
+        action: close
+    }
+]
+
 ReactDOM.render((
         <Layer type={1}
             title={'标题'}
             content={'我是内容'}
             time={5000}
             text={'abc'}
-            btns={['1', '2']}
-            onCancel={() => test()}
-            onConfirm={() => confirm()}
-            onClose={() => close()}
+            btns={btns}
         />
     ),
     document.getElementById('app')

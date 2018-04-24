@@ -16,8 +16,7 @@ const Tips = (props) => {
 class Layer extends Component {
     constructor(props) {
         super(props)
-        this.cancel = this.cancel.bind(this)
-        this.confirm = this.confirm.bind(this)
+        this.btnAction = this.btnAction.bind(this)
         this.clickShade = this.clickShade.bind(this)
     }
     componentDidMount() {
@@ -51,16 +50,10 @@ class Layer extends Component {
         layer.style.display = 'none'
     }
 
-    cancel() {
-        this.props.onCancel()
+    btnAction(fn) {
+        fn && typeof fn === "function" && fn()
         this.close()
     }
-
-    confirm() {
-        this.props.onConfirm()
-        this.close()
-    }
-
     // 点击遮罩层，关闭弹框
     clickShade() {
         this.close()
@@ -70,7 +63,7 @@ class Layer extends Component {
         const btns = this.props.btns
         return btns.map((btn, inx) => {
             return (
-                <span no="" type="0" onClick={this.cancel}>{btn}</span>
+                <span key={inx} no="" type="0" onClick={() => this.btnAction(btn.action) }>{btn.title}</span>
             )
         })
     }

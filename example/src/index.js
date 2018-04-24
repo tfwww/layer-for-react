@@ -1,8 +1,27 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Layer from '../../src/Layer'
+
+const test = () => {
+    console.log('on cancel')
+}
+
+const confirm = () => {
+    console.log('on confirm')
+}
+
+const close = () => {
+    console.log('on close')
+}
+
 ReactDOM.render((
-        <Layer type={1} time={5000} text={'abc'} />
+        <Layer type={1}
+            time={5000}
+            text={'abc'}
+            onCancel={() => test()}
+            onConfirm={() => confirm()}
+            onClose={() => close()}
+        />
     ),
     document.getElementById('app')
 )

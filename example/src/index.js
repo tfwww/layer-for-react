@@ -20,6 +20,7 @@ ReactDOM.render((
             content={'我是内容'}
             time={5000}
             text={'abc'}
+            btns={['1', '2']}
             onCancel={() => test()}
             onConfirm={() => confirm()}
             onClose={() => close()}

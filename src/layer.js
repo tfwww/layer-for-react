@@ -66,6 +66,15 @@ class Layer extends Component {
         this.close()
     }
 
+    renderBtnGroup() {
+        const btns = this.props.btns
+        return btns.map((btn, inx) => {
+            return (
+                <span no="" type="0" onClick={this.cancel}>{btn}</span>
+            )
+        })
+    }
+
     renderDailog() {
         const style = {
             backgroundColor: '#8DCE16',
@@ -80,8 +89,7 @@ class Layer extends Component {
                             <h3 style={style}>{this.props.title}</h3>
                             <div className="layui-m-layercont">{this.props.content}</div>
                             <div className="layui-m-layerbtn">
-                                <span no="" type="0" onClick={this.cancel}>取消</span>
-                                <span yes="" type="1" onClick={this.confirm}>确认</span>
+                                {this.renderBtnGroup()}
                             </div>
                         </div>
                     </div>
